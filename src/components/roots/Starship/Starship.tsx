@@ -19,7 +19,7 @@ const Starship = () => {
         // str.slice(0, 5);
         // const add = allRoots.
         if(allRoots) {
-            const sliced = allRoots?.map(items => {
+            const sliced: any = allRoots?.map((items: any) => {
                 items.manufacturer = items.manufacturer.slice(0, 15)
                 return items
             })
@@ -27,20 +27,19 @@ const Starship = () => {
         }
     }, [allRoots])
 
-    const PersistedCart = useSelector(state => state.Cart);
+    const PersistedCart = useSelector((state: any) => state.Cart);
 
     useEffect(() => {
         if(allRoots.length > 0 && counter === 0) {
             let cart = PersistedCart.items
             const list = [...allRoots]
-            cart.forEach(item => {
-                list.forEach(items => {
+            cart.forEach((item: any) => {
+                list.forEach((items: any) => {
                     if(items.name  === item.name) {
                         items.isLike = true
                     }
                 })
             })
-            console.log(list, ';ssss')
             setCounter(c => c += 1)
             setAllRoots(() => list)
         }
@@ -57,7 +56,7 @@ const Starship = () => {
             {loader && <Spinner/>}
             <section className='section--1 flex--2'>
                 {
-                slicedManufacture?.map((root, i) => {
+                slicedManufacture?.map((root: any, i) => {
                     return (<div className='card' key={i}>
                                 <div className='flex--2'>
                                     <h1>{root.name}</h1>

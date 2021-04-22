@@ -10,7 +10,7 @@ const useCustom = () => {
     const baseUrl = "https://swapi.dev/api/";
     const [loader, setLoader] = useState(false)
     const [allRoots, setAllRoots] = useState([])
-    const [rootName, setRootName] = useState([])
+    const [rootName, setRootName] = useState('')
     const [array, setArray] = useState([])
     const [counter, setCounter] = useState(0)
 

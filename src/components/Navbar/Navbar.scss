@@ -1,6 +1,12 @@
 .Navbar {
     justify-content: space-between;
     padding: 0 1% 0 0;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background: #141414;
+    z-index: 111;
 
     .logo {
         width: 100px;
@@ -39,7 +45,51 @@
 
     a.activeNow {
         border-bottom: 2px solid #d3d0d0;
-        width: 100%;
+        width: fit-content;
         padding: 0 0 5px 0;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .Navbar {
+        padding: 0 5% 0 0;
+    
+        .logo {
+            width: 70px;
+            height: 45px;
+        }
+    
+        .navLink {
+            position: absolute;
+            top: 75px;
+            background: #141414;
+            width: 100%;
+            padding: 10px 0 10px;
+            justify-content: center;
+            z-index: 122;
+            border-bottom: 1px solid #dcdacb;
+            box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+        }
+
+        .cart--icon .icon-favorite {
+            font-size: 20px;
+        }
+
+        .cart--icon span {
+            font-size: 10px;
+        }
+
+        .navLink {
+            top: 50px;
+        }
+
+        .navLink a {
+            font-size: 13px;
+        }
+
+        h1 {
+            font-size: 1rem;
+        }
     }
 }

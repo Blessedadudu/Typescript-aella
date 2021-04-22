@@ -21,14 +21,14 @@ const Planets = () => {
     }, [allRoots])
 
 
-    const PersistedCart = useSelector(state => state.Cart);
+    const PersistedCart = useSelector((state: any) => state.Cart);
 
     useEffect(() => {
         if(allRoots.length > 0 && counter === 0) {
             let cart = PersistedCart.items
             const list = [...allRoots]
-            cart.forEach(item => {
-                list.forEach(items => {
+            cart.forEach((item: any) => {
+                list.forEach((items: any) => {
                     if(items.terrain  === item.terrain) {
                         items.isLike = true
                     }
@@ -49,7 +49,7 @@ const Planets = () => {
             <section className='section--1 flex--2'>
                 {/* {JSON.stringify(allRoots)} */}
                 {
-                allRoots?.map((root, i) => {
+                allRoots?.map((root: any, i) => {
                     return (<div className='card' key={i}>
                                 <div className='flex--2'>
                                     <h1>{root.name}</h1>

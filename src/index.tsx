@@ -22,7 +22,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducers)
 
-const store = createStore(persistedReducer, compose(applyMiddleware(thunkMiddleware), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()), )
+const store = createStore(persistedReducer, compose(applyMiddleware(thunkMiddleware)), )
 
 const persistor = persistStore(store)
 

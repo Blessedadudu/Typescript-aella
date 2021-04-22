@@ -16,20 +16,19 @@ const People = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const PersistedCart = useSelector(state => state.Cart);
+    const PersistedCart = useSelector((state: any) => state.Cart);
 
     useEffect(() => {
         if(allRoots.length > 0 && counter === 0) {
             let cart = PersistedCart.items
             const list = [...allRoots]
-            cart.forEach(item => {
-                list.forEach(items => {
+            cart.forEach((item: any) => {
+                list.forEach((items: any) => {
                     if(items.name  === item.name) {
                         items.isLike = true
                     }
                 })
             })
-            console.log(list, ';ssss')
             setCounter(c => c += 1)
             setAllRoots(() => list)
         }
@@ -42,7 +41,7 @@ const People = () => {
             {loader && <Spinner/>}
             <section className='section--1 flex--2'>
                 {
-                allRoots?.map((root, i) => {
+                allRoots?.map((root: any, i) => {
                     return (
                         <div className='card' key={i}>
                             <div className='flex--2'>

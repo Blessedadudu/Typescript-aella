@@ -16,14 +16,14 @@ const Films = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const PersistedCart = useSelector(state => state.Cart);
+    const PersistedCart = useSelector((state: any )=> state.Cart);
 
     useEffect(() => {
         if(allRoots.length > 0 && counter === 0) {
             let cart = PersistedCart.items
             const list = [...allRoots]
-            cart.forEach(item => {
-                list.forEach(items => {
+            cart.forEach((item: any) => {
+                list.forEach((items: any) => {
                     if(items.episode_id === item.episode_id) {
                         items.isLike = true
                     }
@@ -51,11 +51,11 @@ const Films = () => {
             <section className='section--1 flex--2'>
                 {loader && <Spinner/>}
                 {
-                allRoots?.map((root, i) => {
+                allRoots?.map((root: any, i) => {
                     return (<div className='card' key={i}>
                                 <div className='flex--2'>
                                     <h1>{root.title}</h1>   
-                                    <MdFavorite className={`icon--favorite ${root.isLike && 'icon--red'}`} onClick={() => handleFavorite(root, i)}/>
+                                    <MdFavorite className={`icon--favorite ${root.isLike && 'icon--red'}`} onClick={() => handleFavorite(root)}/>
                                 </div>
                                 <p><span>Episode: </span> {root.episode_id}</p>
                                 <p><span>Opening Crawl:</span> {root.opening_crawl}</p>

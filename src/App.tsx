@@ -4,7 +4,7 @@ import Home from './components/Home/Home'
 import Films from './components/roots/Films/Films'
 import People from './components/roots/People/People'
 import Planets from './components/roots/Planets/Planets'
-import Starship from './components/roots/Starship/Starship'
+import Starship from './components/roots/Starship/Starship';
 
 
 function App() {
