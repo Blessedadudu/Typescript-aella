@@ -1,0 +1,17 @@
+export const CHANGE_FIELD = 'CHANGE_FIELD';
+
+
+export const REQUEST_PENDING = 'REQUEST_PENDING'; 
+export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
+export const REQUEST_FAILED = 'REQUEST_FAILED';
+
+export const LOGIN_ATTEMPT = 'LOGIN_ATTEMPT';
+export const LOGOUT_USER = 'LOGOUT_USER';
+
+
+
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const CLEAR_ALL_CART = 'CLEAR_ALL_CART';
+
+

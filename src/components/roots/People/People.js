@@ -1,0 +1,68 @@
+import { useEffect } from 'react'
+import './People.scss'
+import Navbar from "../../Navbar/Navbar"
+import useCustom from '../../../Api/CustomHooks/useCustom'
+import Spinner from "../../../Spinner/Spinner"
+import { MdFavorite } from "react-icons/md";
+import { useSelector } from 'react-redux';
+
+
+
+const People = () => {
+    const { setRootName, setAllRoots, setCounter, allRoots, loader, handleFavorite, counter } = useCustom()
+
+    useEffect(() => {
+        setRootName('people')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    const PersistedCart = useSelector(state => state.Cart);
+
+    useEffect(() => {
+        if(allRoots.length > 0 && counter === 0) {
+            let cart = PersistedCart.items
+            const list = [...allRoots]
+            cart.forEach(item => {
+                list.forEach(items => {
+                    if(items.name  === item.name) {
+                        items.isLike = true
+                    }
+                })
+            })
+            console.log(list, ';ssss')
+            setCounter(c => c += 1)
+            setAllRoots(() => list)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [allRoots])
+
+    return (
+        <main className='people'>
+            <Navbar/>
+            {loader && <Spinner/>}
+            <section className='section--1 flex--2'>
+                {
+                allRoots?.map((root, i) => {
+                    return (
+                        <div className='card' key={i}>
+                            <div className='flex--2'>
+                                <h1>{root.name}</h1>
+                                <MdFavorite className={`icon--favorite ${root.isLike && 'icon--red'}`} onClick={() => handleFavorite(root)}/>
+                            </div>
+                            <p><span>Height:</span> {root.height}</p>
+                            <p><span>Mass: </span> {root.mass}</p>
+                            <p><span>Hair Color: </span> {root.hair_color}</p>
+                            <p><span>Skin Color: </span> {root.skin_color}</p>
+                            <p><span>Eye Color: </span> {root.eye_color}</p>
+                            <p><span>Birth Year: </span> {root.birth_year}</p>
+                            <p><span>Gender: </span>{root.gender}</p>
+                        </div>
+                    )
+                })
+                }
+            </section>
+        </main>
+    )
+}
+
+export default People

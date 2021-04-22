@@ -1,0 +1,50 @@
+.starship {
+    .section--1 {
+        grid-gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 4rem;
+    }
+    
+    .card {
+        background-color: #d3d0d0;
+        color: #000000;
+        width: fit-content;
+        min-width: 380px;
+        max-width: 600px;
+        padding: 2rem;
+        border-radius: 10px;
+        flex: 1;
+        max-width: 500px;
+        
+        .flex--2 {
+            justify-content: space-between;
+        }
+    }
+
+    .icon--favorite {
+        font-size: 2rem;
+        position: relative;
+        top: 3px;
+        cursor: pointer;
+    }
+    
+    .icon--red {
+        color: red;
+    }
+
+
+    .manufacturer {
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
+
+    span {
+        font-weight: bold;
+    }
+
+    p {
+        padding: 5px 0;
+    }
+}
+

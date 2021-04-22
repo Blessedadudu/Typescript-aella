@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +11,69 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #141414;
+  color: #d3d0d0;
+  overflow-x: hidden;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+button, button:focus {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.flex--1 {
+  display: flex;
+}
+
+.flex--2 {
+  display: flex;
+  align-items: center;
+}
+
+.flex--3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.border--main {
+  border-bottom: 1px solid #dcdacb;
+  box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  justify-content: center;
+  background-color: #0a0a0abb;
+  color: #ffffff;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: grey;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+width: 12px;
+}
+
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(177, 177, 177, 0.412);
+  border-radius: 10px;
 }

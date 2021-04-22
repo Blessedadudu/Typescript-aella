@@ -1,0 +1,45 @@
+.Navbar {
+    justify-content: space-between;
+    padding: 0 1% 0 0;
+
+    .logo {
+        width: 100px;
+        height: 70px;
+    }
+
+    .navLink {
+        a {
+            list-style: none;
+            margin: 0 2rem; 
+            text-transform: capitalize;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .cart--icon {
+        position: relative;
+
+        span {
+            position: absolute;
+            top: -8px;
+            right: -7px;
+            color: rgb(0, 255, 21);
+            font-size: 12px;
+            background-color: black;
+            border-radius: 50%;
+            padding: 0px 5px 2px;
+        }
+
+        .icon-favorite {
+            font-size: 25px;
+        }
+    }
+
+
+    a.activeNow {
+        border-bottom: 2px solid #d3d0d0;
+        width: 100%;
+        padding: 0 0 5px 0;
+    }
+}

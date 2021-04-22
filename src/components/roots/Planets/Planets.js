@@ -1,0 +1,75 @@
+import { useEffect } from 'react'
+import './Planets.scss'
+import Navbar from "../../Navbar/Navbar"
+import useCustom from '../../../Api/CustomHooks/useCustom'
+import Spinner from "../../../Spinner/Spinner"
+import { MdFavorite } from "react-icons/md";
+import { useSelector } from 'react-redux';
+
+const Planets = () => {
+    const { setRootName, setAllRoots, setCounter, allRoots, loader, handleFavorite, counter } = useCustom()
+
+
+    // MdFavoriteBorder
+
+    useEffect(() => {
+        setRootName('planets')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    useEffect(() => {
+    }, [allRoots])
+
+
+    const PersistedCart = useSelector(state => state.Cart);
+
+    useEffect(() => {
+        if(allRoots.length > 0 && counter === 0) {
+            let cart = PersistedCart.items
+            const list = [...allRoots]
+            cart.forEach(item => {
+                list.forEach(items => {
+                    if(items.terrain  === item.terrain) {
+                        items.isLike = true
+                    }
+                })
+            })
+            console.log(list, ';ssss')
+            setCounter(c => c += 1)
+            setAllRoots(() => list)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [allRoots])
+
+
+    return (
+        <main className='planets'>
+            <Navbar/>
+            {loader && <Spinner/>}
+            <section className='section--1 flex--2'>
+                {/* {JSON.stringify(allRoots)} */}
+                {
+                allRoots?.map((root, i) => {
+                    return (<div className='card' key={i}>
+                                <div className='flex--2'>
+                                    <h1>{root.name}</h1>
+                                    <MdFavorite className={`icon--favorite ${root.isLike && 'icon--red'}`} onClick={() => handleFavorite(root)}/>
+                                </div>
+                                <p><span>Rotation Period:</span> {root.rotation_period}</p>
+                                <p><span>Orbital Period: </span> {root.orbital_period}</p>
+                                <p><span>Diameter: </span> {root.diameter}</p>
+                                <p><span>Climate: </span> {root.climate}</p>
+                                <p><span>Gravity: </span> {root.gravity}</p>
+                                <p><span>Terrain: </span> {root.terrain}</p>
+                                <p><span>Surface Water: </span>{root.surface_water}</p>
+                                <p><span>Population: </span>{root.population}</p>
+                            </div>
+                            )
+                })
+                }
+            </section>
+        </main>
+    )
+}
+
+export default Planets
