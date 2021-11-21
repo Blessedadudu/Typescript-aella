@@ -4,9 +4,10 @@ import { NavLink } from "react-router-dom";
 import { MdFavorite } from "react-icons/md";
 import { useSelector } from 'react-redux';
 // import { RootState } from 'typesafe-actions';
+import { RootState  } from '../../index';
 
 const Navbar = () => {
-    const CartCount = useSelector((state: any) => state.Cart.amount)
+    const CartCount = useSelector((state: RootState) => state.Cart.amount)
 
     return (
         <div className='Navbar flex--2 border--main'>

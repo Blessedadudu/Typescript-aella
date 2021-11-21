@@ -16,7 +16,6 @@ body {
   overflow-x: hidden;
 }
 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -73,7 +72,42 @@ width: 12px;
 }
 
 
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(177, 177, 177, 0.412);
-  border-radius: 10px;
-}
+// *::-webkit-scrollbar-thumb {
+//   background-color: rgba(177, 177, 177, 0.412);
+//   border-radius: 10px;
+// }
+
+// div * {
+//   scrollbar-width: none; /* Firefox */
+//   -ms-overflow-style: none; /* IE 10+ */
+//   ::-webkit-scrollbar-track {
+//     -webkit-box-shadow: none !important;
+//     background-color: transparent;
+//   }
+//   ::-webkit-scrollbar {
+//     width: 3px !important;
+//     background-color: transparent;
+//   }
+//   ::-webkit-scrollbar-thumb {
+//     background-color: transparent;
+//   }
+// }
+
+// .on-scrollbar{
+//   scrollbar-width: thin; /* Firefox */
+//   -ms-overflow-style: none; /* IE 10+ */
+// }
+
+// .on-scrollbar::-webkit-scrollbar-track {
+//   -webkit-box-shadow: none !important;
+//   background-color: transparent !important;
+// }
+
+// .on-scrollbar::-webkit-scrollbar {
+//   width: 6px !important;
+//   background-color: transparent;
+// }
+
+// .on-scrollbar::-webkit-scrollbar-thumb {
+//   background-color: #acacac;
+// }

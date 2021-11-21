@@ -23,16 +23,17 @@ const useCustom = () => {
     
     
     const PersistedCart = useSelector(state => state.Cart)
-    console.log(PersistedCart.items, 'PersistedCartPersistedCart')
+
     useEffect(() => {
         setArray(PersistedCart.items)
     }, [PersistedCart.items])
 
     const handlePeopleFavorite = (item) => {
+        console.log(allRoots, 'iteeeeeeem');
         const list = [...allRoots];
         const curItem = list.find(el => el.name === item.name);
         curItem.isLike = !curItem.isLike;
-        setAllRoots(() => list);
+        // setAllRoots(() => list);
         if(curItem.isLike) {
             console.log(array, 'arrayarray')
             const found = array.find(item => item.name === curItem.name)

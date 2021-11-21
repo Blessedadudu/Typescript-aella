@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
@@ -10,9 +10,21 @@ import thunkMiddleware from 'redux-thunk';
 import { PersistGate } from 'redux-persist/integration/react'
 import storage from 'redux-persist/lib/storage'
 import { createStore, applyMiddleware, combineReducers, compose  } from 'redux';
-import { Cart, LoginUsers } from './Api/redux-manager/reducers'
+import { Cart, LoginUsers } from './Api/redux-manager/reducers';
+
+
+
+const handleScroll = (e: any) => {
+  if (e.target.classList?.contains("on-scrollbar") === false) {
+      e.target.classList?.add("on-scrollbar");
+  }
+}
+
+window.addEventListener('scroll', handleScroll, true);
 
 const rootReducers = combineReducers({ LoginUsers, Cart })
+
+export type RootState = ReturnType<typeof rootReducers>
 
 const persistConfig = {
   key: 'root',
