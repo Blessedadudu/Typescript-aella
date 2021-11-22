@@ -120,7 +120,6 @@ const useCustom = () => {
 
     const getAllRoots = useCallback(async () => {
         setLoader(true)
-        console.log('rannnn');
         try {
             const response = await axios.get(`${baseUrl}${rootName}`); 
             console.log(response.data.results)
