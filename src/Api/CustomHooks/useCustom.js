@@ -1,13 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios'  
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../Api/redux-manager/actions';
+import { addToCart } from '../redux-manager/actions';
 import { useSelector } from 'react-redux';
 
 
 const useCustom = () => {
     const dispatch = useDispatch(); 
-    const baseUrl = "https://swapi.dev/api/";
+    // const baseUrl = "https://swapi.dev/api/";
+    const baseUrl = "https://jsonplaceholder.typicode.com/";
     const [loader, setLoader] = useState(false)
     const [allRoots, setAllRoots] = useState([])
     const [rootName, setRootName] = useState('')
@@ -49,6 +50,7 @@ const useCustom = () => {
         }
 
     }
+
     const handleStarshipsFavorite = (item) => {
         const list = [...allRoots];
         const curItem = list.find(el => el.name === item.name);
@@ -118,11 +120,13 @@ const useCustom = () => {
 
     const getAllRoots = useCallback(async () => {
         setLoader(true)
+        console.log('rannnn');
         try {
             const response = await axios.get(`${baseUrl}${rootName}`); 
             console.log(response.data.results)
             if(response.status === 200){
-                let newArray = [...response.data.results]
+                // let newArray = [...response.data.results]
+                let newArray = [...response.data]
                 for (let i = 0; i < newArray.length; i++){
                     newArray[i].isLike = false
                 }
