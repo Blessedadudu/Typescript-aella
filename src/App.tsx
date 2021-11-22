@@ -21,10 +21,10 @@ function App() {
             <Route exact path='/' component={Home} />
             <Suspense fallback={<Spinner/>}>
               <Route path='/films' component={Films} />
+              <Route path='/people' component={People} />
+              <Route path='/planets' component={Planets} />
+              <Route path='/spaceships' component={Starship} />
             </Suspense>
-            <Route path='/people' component={People} />
-            <Route path='/planets' component={Planets} />
-            <Route path='/spaceships' component={Starship} />
       </Switch>
     </div>
   );
