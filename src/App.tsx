@@ -4,14 +4,10 @@ import { Switch, Route } from "react-router-dom";
 import Home from './components/Home/Home'
 import Spinner from "./Spinner/Spinner";
 // import Films from './components/roots/Films/Films'
-import People from './components/roots/People/People'
-import Planets from './components/roots/Planets/Planets'
-import Starship from './components/roots/Starship/Starship';
-
 const Films = lazy(() => import('./components/roots/Films/Films'))
-// const Films = lazy(() => import('./components/roots/Films/Films'))
-// const Films = lazy(() => import('./components/roots/Films/Films'))
-// const Films = lazy(() => import('./components/roots/Films/Films'))
+const People = lazy(() => import('./components/roots/People/People'))
+const Planets = lazy(() => import('./components/roots/Planets/Planets'))
+const Starship = lazy(() => import('./components/roots/Starship/Starship'))
 
 
 function App() {
