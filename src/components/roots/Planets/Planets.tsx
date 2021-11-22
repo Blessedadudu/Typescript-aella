@@ -13,7 +13,7 @@ const Planets = () => {
     // MdFavoriteBorder
 
     useEffect(() => {
-        setRootName('planets')
+        setRootName('albums')
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -23,23 +23,23 @@ const Planets = () => {
 
     const PersistedCart = useSelector((state: any) => state.Cart);
 
-    useEffect(() => {
-        if(allRoots.length > 0 && counter === 0) {
-            let cart = PersistedCart.items
-            const list = [...allRoots]
-            cart.forEach((item: any) => {
-                list.forEach((items: any) => {
-                    if(items.terrain  === item.terrain) {
-                        items.isLike = true
-                    }
-                })
-            })
-            console.log(list, ';ssss')
-            setCounter(c => c += 1)
-            setAllRoots(() => list)
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [allRoots])
+    // useEffect(() => {
+    //     if(allRoots.length > 0 && counter === 0) {
+    //         let cart = PersistedCart.items
+    //         const list = [...allRoots]
+    //         cart.forEach((item: any) => {
+    //             list.forEach((items: any) => {
+    //                 if(items.terrain  === item.terrain) {
+    //                     items.isLike = true
+    //                 }
+    //             })
+    //         })
+    //         console.log(list, ';ssss')
+    //         setCounter(c => c += 1)
+    //         setAllRoots(() => list)
+    //     }
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [allRoots])
 
 
     return (
@@ -52,12 +52,12 @@ const Planets = () => {
                 allRoots?.map((root: any, i) => {
                     return (<div className='card' key={i}>
                                 <div className='flex--2'>
-                                    <h1>{root.name}</h1>
+                                    <h1>{root.id}</h1>
                                     <MdFavorite className={`icon--favorite ${root.isLike && 'icon--red'}`} onClick={() => handleFavorite(root)}/>
                                 </div>
                                 <p><span>Rotation Period:</span> {root.rotation_period}</p>
                                 <p><span>Orbital Period: </span> {root.orbital_period}</p>
-                                <p><span>Diameter: </span> {root.diameter}</p>
+                                <p><span>Diameter: </span> {root.title}</p>
                                 <p><span>Climate: </span> {root.climate}</p>
                                 <p><span>Gravity: </span> {root.gravity}</p>
                                 <p><span>Terrain: </span> {root.terrain}</p>

@@ -12,39 +12,36 @@ const Starship = () => {
     const [slicedManufacture, setSlicedManufacture] = useState([])
 
     useEffect(() => {
-        setRootName('starships')
+        setRootName('photos')
     })
 
     useEffect(() => {
         // str.slice(0, 5);
         // const add = allRoots.
         if(allRoots) {
-            const sliced: any = allRoots?.map((items: any) => {
-                items.manufacturer = items.manufacturer.slice(0, 15)
-                return items
-            })
+            const sliced: any = allRoots?.slice(0, 6)
             setSlicedManufacture(sliced)
         }
     }, [allRoots])
 
     const PersistedCart = useSelector((state: any) => state.Cart);
 
-    useEffect(() => {
-        if(allRoots.length > 0 && counter === 0) {
-            let cart = PersistedCart.items
-            const list = [...allRoots]
-            cart.forEach((item: any) => {
-                list.forEach((items: any) => {
-                    if(items.name  === item.name) {
-                        items.isLike = true
-                    }
-                })
-            })
-            setCounter(c => c += 1)
-            setAllRoots(() => list)
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [allRoots])
+    // useEffect(() => {
+    //     if(allRoots.length > 0 && counter === 0) {
+    //         let cart = PersistedCart.items
+    //         const list = [...allRoots]
+    //         cart.forEach((item: any) => {
+    //             list.forEach((items: any) => {
+    //                 if(items.name  === item.name) {
+    //                     items.isLike = true
+    //                 }
+    //             })
+    //         })
+    //         setCounter(c => c += 1)
+    //         setAllRoots(() => list)
+    //     }
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [allRoots])
 
 
     console.log(slicedManufacture, 'slicedManufactureslicedManufacture')
@@ -63,8 +60,8 @@ const Starship = () => {
                                     <MdFavorite className={`icon--favorite ${root.isLike && 'icon--red'}`} onClick={() => handleFavorite(root)}/>
                                 </div>
                                 <p><span>Rotation Period:</span> {root.rotation_period}</p>
-                                <p><span>Model: </span> {root.model}</p>
-                                <p className='ma'><span>manufacturer: </span> {root.manufacturer}</p>
+                                <p><span>Model: </span> {root.title}</p>
+                                {/* <p className='ma'><span>manufacturer: </span> {root.manufacturer}</p>
                                 <p><span>cost_in_credits: </span> {root.cost_in_credits}</p>
                                 <p><span>length: </span> {root.length}</p>
                                 <p><span>max_atmosphering_speed: </span> {root.max_atmosphering_speed}</p>
@@ -75,7 +72,7 @@ const Starship = () => {
                                 <p><span>consumables: </span>{root.consumables}</p>
                                 <p><span>hyperdrive_rating: </span>{root.hyperdrive_rating}</p>
                                 <p><span>MGLT: </span>{root.MGLT}</p>
-                                <p><span>starship_class: </span>{root.starship_class}</p>
+                                <p><span>starship_class: </span>{root.starship_class}</p> */}
                             </div>
                             )
                 })

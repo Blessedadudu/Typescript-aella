@@ -12,28 +12,28 @@ const People = () => {
     const { setRootName, setAllRoots, setCounter, allRoots, loader, handleFavorite, counter } = useCustom()
 
     useEffect(() => {
-        setRootName('people')
+        setRootName('comments')
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const PersistedCart = useSelector((state: any) => state.Cart);
 
-    useEffect(() => {
-        if(allRoots.length > 0 && counter === 0) {
-            let cart = PersistedCart.items
-            const list = [...allRoots]
-            cart.forEach((item: any) => {
-                list.forEach((items: any) => {
-                    if(items.name  === item.name) {
-                        items.isLike = true
-                    }
-                })
-            })
-            setCounter(c => c += 1)
-            setAllRoots(() => list)
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [allRoots])
+    // useEffect(() => {
+    //     if(allRoots.length > 0 && counter === 0) {
+    //         let cart = PersistedCart.items
+    //         const list = [...allRoots]
+    //         cart.forEach((item: any) => {
+    //             list.forEach((items: any) => {
+    //                 if(items.name  === item.name) {
+    //                     items.isLike = true
+    //                 }
+    //             })
+    //         })
+    //         setCounter(c => c += 1)
+    //         setAllRoots(() => list)
+    //     }
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [allRoots])
 
     return (
         <main className='people'>
@@ -50,9 +50,9 @@ const People = () => {
                             </div>
                             <p><span>Height:</span> {root.height}</p>
                             <p><span>Mass: </span> {root.mass}</p>
-                            <p><span>Hair Color: </span> {root.hair_color}</p>
-                            <p><span>Skin Color: </span> {root.skin_color}</p>
-                            <p><span>Eye Color: </span> {root.eye_color}</p>
+                            <p><span>Hair Color: </span> {root.name}</p>
+                            <p><span>Skin Color: </span> {root.email}</p>
+                            <p><span>Eye Color: </span> {root.body}</p>
                             <p><span>Birth Year: </span> {root.birth_year}</p>
                             <p><span>Gender: </span>{root.gender}</p>
                         </div>
