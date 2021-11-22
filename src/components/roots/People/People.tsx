@@ -4,19 +4,19 @@ import Navbar from "../../Navbar/Navbar"
 import useCustom from '../../../Api/CustomHooks/useCustom'
 import Spinner from "../../../Spinner/Spinner"
 import { MdFavorite } from "react-icons/md";
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 
 
 const People = () => {
-    const { setRootName, setAllRoots, setCounter, allRoots, loader, handleFavorite, counter } = useCustom()
+    const { setRootName, allRoots, loader, handleFavorite } = useCustom()
 
     useEffect(() => {
         setRootName('comments')
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const PersistedCart = useSelector((state: any) => state.Cart);
+    // const PersistedCart = useSelector((state: any) => state.Cart);
 
     // useEffect(() => {
     //     if(allRoots.length > 0 && counter === 0) {

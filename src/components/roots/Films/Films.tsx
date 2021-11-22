@@ -4,12 +4,12 @@ import Navbar from "../../Navbar/Navbar"
 import useCustom from '../../../Api/CustomHooks/useCustom'
 import Spinner from "../../../Spinner/Spinner"
 import { MdFavorite } from "react-icons/md";
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 
 
 const Films = () => {
-    const { counter, setCounter, setRootName, allRoots, setAllRoots, loader, handleFavorite } = useCustom()
+    const { setRootName, allRoots, loader, handleFavorite } = useCustom()
 
     useEffect(() => {
         // setRootName('films')
