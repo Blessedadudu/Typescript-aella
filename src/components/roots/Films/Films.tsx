@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import './Films.scss'
 import Navbar from "../../Navbar/Navbar"
 import useCustom from '../../../Api/CustomHooks/useCustom'
-import Spinner from "../../../Spinner/Spinner"
+import Spinner from "../../../Helpers/Spinner/Spinner"
 import { MdFavorite } from "react-icons/md";
 // import { useSelector } from 'react-redux';
 
@@ -45,8 +45,10 @@ const Films = () => {
 
 
 
+    throw Error;
 
     return (
+
         <main className='films'>
             <Navbar/>
             <section className='section--1 flex--2'>

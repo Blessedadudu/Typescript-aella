@@ -1,4 +1,4 @@
-import LoaderIcon from '../assets/loaderio.svg'
+import LoaderIcon from '../../assets/loaderio.svg'
 
 
 const Spinner = () => {

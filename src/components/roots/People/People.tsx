@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import './People.scss'
 import Navbar from "../../Navbar/Navbar"
 import useCustom from '../../../Api/CustomHooks/useCustom'
-import Spinner from "../../../Spinner/Spinner"
+import Spinner from "../../../Helpers/Spinner/Spinner"
 import { MdFavorite } from "react-icons/md";
 // import { useSelector } from 'react-redux';
 
