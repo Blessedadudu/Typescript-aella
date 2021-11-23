@@ -43,10 +43,6 @@ const Films = () => {
 
     console.log(allRoots, '1111 11')
 
-
-
-    throw Error;
-
     return (
 
         <main className='films'>
