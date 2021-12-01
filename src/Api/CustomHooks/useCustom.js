@@ -34,7 +34,6 @@ const useCustom = () => {
         const list = [...allRoots];
         const curItem = list.find(el => el.name === item.name);
         curItem.isLike = !curItem.isLike;
-        // setAllRoots(() => list);
         if(curItem.isLike) {
             console.log(array, 'arrayarray')
             const found = array.find(item => item.name === curItem.name)
